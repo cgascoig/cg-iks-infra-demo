@@ -50,7 +50,8 @@ output "cluster_moid" {
 }
 
 data "intersight_kubernetes_cluster_profile" "prod" {
-  moid = module.terraform-intersight-iks.cluster_moid
+  # moid = module.terraform-intersight-iks.cluster_moid
+  name = "cg-iks-prod"
 }
 
 # output "kube_config" {
