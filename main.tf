@@ -49,7 +49,7 @@ output "cluster_moid" {
   value = module.terraform-intersight-iks.cluster_moid
 }
 
-data "intersight_kubernetes_cluster" "prod" {
+data "intersight_kubernetes_cluster_profile" "prod" {
   moid = module.terraform-intersight-iks.cluster_moid
 }
 
