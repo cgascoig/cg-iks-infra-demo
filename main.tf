@@ -45,12 +45,16 @@ module "terraform-intersight-iks" {
 #   tags         = var.tags
 }
 
-data "intersight_kubernetes_cluster" "prod" {
-  moid = module.terraform-intersight-iks.cluster_moid
+output "cluster_moid" {
+  value = module.terraform-intersight-iks.cluster_moid
 }
 
-output "kube_config" {
-  value = data.intersight_kubernetes_cluster.prod.results[0].kube_config
-}
+# data "intersight_kubernetes_cluster" "prod" {
+#   moid = module.terraform-intersight-iks.cluster_moid
+# }
+
+# output "kube_config" {
+#   value = data.intersight_kubernetes_cluster.prod.results[0].kube_config
+# }
 
 # bump 2
