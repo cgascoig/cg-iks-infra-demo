@@ -45,5 +45,12 @@ module "terraform-intersight-iks" {
 #   tags         = var.tags
 }
 
+data "intersight_kubernetes_cluster" "iks" {
+    name = "cg-iks-prod"
+}
+
+output "kube_config" {
+  value = data.intersight_kubernetes_cluster.iks.results[0].kube_config
+}
 
 # bump 2
