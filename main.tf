@@ -25,13 +25,9 @@ module "terraform-intersight-iks" {
   ip_secondary_ntp      = "ntp.esl.cisco.com"
 
   # Network Configuration Settings
-  # pod_cidr = "100.65.0.0/16"
-  # service_cidr = "100.64.0.0/24"
-  # cni = "Calico"
+
   domain_name         = "aci.ceclab.info"
   timezone            = "Australia/Sydney"
-#   unsigned_registries = ["10.101.128.128"]
-  # root_ca_registries  = [""]
 
   # Cluster information
   ssh_user     = var.ssh_user
@@ -40,9 +36,6 @@ module "terraform-intersight-iks" {
   worker_count = 1
   master_count = 1
   load_balancers = 1
-  # Organization and Tag
-#   organization = var.organization
-#   tags         = var.tags
 }
 
 data "intersight_kubernetes_cluster" "iks" {
@@ -52,5 +45,3 @@ data "intersight_kubernetes_cluster" "iks" {
 output "kube_config" {
   value = data.intersight_kubernetes_cluster.iks.results[0].kube_config
 }
-
-# bump 2
