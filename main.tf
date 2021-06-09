@@ -40,6 +40,10 @@ module "terraform-intersight-iks" {
 
 data "intersight_kubernetes_cluster" "iks" {
     name = "cg-iks-prod"
+
+    depends_on = [
+      module.terraform-intersight-iks
+    ]
 }
 
 output "kube_config" {
