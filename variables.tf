@@ -8,19 +8,19 @@ variable "intersight_secretkey" {
 }
 
 variable "intersight_endpoint" {
-    type = string
-    default = "https://www.intersight.com"
+  type    = string
+  default = "https://www.intersight.com"
 }
 
 variable "vc_password" {
-    type = string
+  type = string
 }
 
 variable "ssh_user" {
-  type = string
+  type    = string
   default = "iksadmin"
 }
 
 variable "ssh_key" {
-    type = string
+  type = string
 }
